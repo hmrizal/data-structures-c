@@ -5,7 +5,7 @@
 struct linkedList{
 	int num;
 	struct linkedList *next;
-}*head, *tail, *curr, *temp; // pointer variable
+}*head, *tail, *curr, *delHead; // pointer variable
 
 // fungsi untuk menampilkan deret
 void tampilkan(void){
@@ -39,15 +39,17 @@ void isikan(int num){
 	tail->next = NULL;
 }
 
-// fungsi untuk mencari dan menghapus isi deret
+// fungsi untuk menghapus Head
 void hapusHead(){
+	// jika head = NULL, otomatis deret kosong
 	if(head == NULL){
 		printf("Deret kosong\n");
 	}
+	// menghapus head menggunakan variable pointer delHead
 	else{
-		temp = head;
+		delHead = head;
 		head = head->next;
-		free(temp);
+		free(delHead);
 	}
 }
 
