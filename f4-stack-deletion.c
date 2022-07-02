@@ -35,8 +35,7 @@ void display(){
 	}
 	else{
 		for(i=top;i>=0;i--){
-			printf("\n %d",st[i]);
-			printf("\n");
+			printf("\t %d",st[i]);
 		}
 	}
 }
@@ -55,6 +54,9 @@ int main(void){
 	printf(" Hapus stack\n");
 	for(int i=0;i<sizeof(deret)/sizeof(deret[0]);i++){
 		pop(deret[i]);
+		printf("\n Elemen yang dihapus adalah %d\n", deret[i]);
+		display();
+		printf("\n");
 	}
 	printf("\n");
 	printf(" Stack setelah dihapus :\n");
